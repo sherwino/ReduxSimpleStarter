@@ -29,7 +29,7 @@ constructor(props) {
 // this.state = object....
 // only inside the constructor function we change state like this.
 
-  this.state = { term: ''};
+  this.state = { term: 'Starting Value'};
 }
 
   render() {
@@ -42,8 +42,10 @@ constructor(props) {
     //don't forget all javascript variable need to be in curlys
     return (
       <div>
-        <input onChange={ event => this.setState({ term: event.target.value })} />
-        // Value of the input: { this.state.term }
+        <input 
+          value = { this.state.term }
+          onChange={ event => this.setState({ term: event.target.value })} />
+          <pre>Value of the input: { this.state.term }</pre>
       </div>
     );
   }
